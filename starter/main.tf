@@ -1,9 +1,13 @@
-resource "random_pet" "rg-name" {
-  prefix    = var.resource_group_name_prefix
+module "sqlvm" {
+
+  source = "./sqlvm"
+  count  = var.vm_count              #reserved key words , won't be passed as arguents to child templates
+
+  resource_group_name_prefix = var.resource_group_name_prefix
+  resource_group_location    = var.resource_group_location
+
+  vm_suffix = count.index
+
+
 }
 
-resource "azurerm_resource_group" "rg" {
-  count     = var.vm_count
-  name      = "${random_pet.rg-name.id}-${count.index}"
-  location  = var.resource_group_location
-}
