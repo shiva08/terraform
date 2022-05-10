@@ -32,9 +32,33 @@ variable "subnet" {
 }
 
 variable "localadmin_username" {
-  default = ""
-} 
+  default = "LocalAdmin"
+}
 
 variable "localadmin_password" {
-  default = ""
+  default = "Contoso!0000"
+}
+
+variable "domain_name" {
+  default     = "corp.contoso.com"
+  description = "The Azure location where all resources in this example should be created."
+}
+
+
+variable "oupath" {
+  default     = ""
+  description = "The prefix used for all resources used by this NetApp Account"
+}
+
+// split(".", domain_name)[0] 
+
+variable "domain_join_username" {
+  default     = "CORP\\DomainAdmin"
+  description = "The prefix used for all resources used by this NetApp Account"
+}
+
+
+variable "domain_join_password" {
+  default     = "Contoso!0000"
+  description = "The prefix used for all resources used by this NetApp Account"
 }
