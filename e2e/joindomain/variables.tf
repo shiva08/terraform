@@ -1,6 +1,6 @@
 
 variable "virtual_machine_id" {
-  default = ""
+  default = "dummy"
 }
 
 variable "domain_name" {
@@ -8,18 +8,15 @@ variable "domain_name" {
   description = "The Azure location where all resources in this example should be created."
 }
 
-
 variable "oupath" {
   default     = ""
   description = "The prefix used for all resources used by this NetApp Account"
 }
 
-
 variable "domain_join_username" {
   default     = "CORP\\DomainAdmin"
   description = "The prefix used for all resources used by this NetApp Account"
 }
-
 
 variable "domain_join_password" {
   default     = "Contoso!0000"

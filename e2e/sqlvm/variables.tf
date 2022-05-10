@@ -31,9 +31,9 @@ variable "vmname" {
 }
 
 variable "localadmin_username"{
-  default = ""
+  default = "LocalAdmin"
 }
 
 variable "localadmin_password"{
-  default = ""
+  default = "Contoso!0000"
 }

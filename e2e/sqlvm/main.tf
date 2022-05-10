@@ -123,8 +123,8 @@ resource "azurerm_virtual_machine" "example2" {
 
   os_profile {
     computer_name  = "winhost01"
-    admin_username = "{var.localadmin_username}"
-    admin_password = "{var.localadmin_password}"
+    admin_username = "${var.localadmin_username}"
+    admin_password = "${var.localadmin_password}"
   }
 
   os_profile_windows_config {

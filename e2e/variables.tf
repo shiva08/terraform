@@ -8,13 +8,6 @@ variable "location" {
   description = "The Azure location where all resources in this example should be created."
 }
 
-/*
-variable "prefix" {
-  default     = "shiva"
-  description = "The prefix used for all resources used by this NetApp Account"
-}
-*/
-
 variable "rgname" {
   default     = "SQL-HA-RG"
   description = "The prefix used for all resources used by this NetApp Account"
@@ -44,19 +37,17 @@ variable "domain_name" {
   description = "The Azure location where all resources in this example should be created."
 }
 
-
 variable "oupath" {
   default     = ""
   description = "The prefix used for all resources used by this NetApp Account"
 }
 
-// split(".", domain_name)[0] 
 
 variable "domain_join_username" {
-  default     = "CORP\\DomainAdmin"
+  default = "DomainAdmin"
+
   description = "The prefix used for all resources used by this NetApp Account"
 }
-
 
 variable "domain_join_password" {
   default     = "Contoso!0000"
