@@ -14,9 +14,9 @@ resource "azurerm_virtual_machine_extension" "domjoin" {
 
     settings = <<SETTINGS
         {
-        "Name": var.domain_name,
-        "OUPath": var.oupath,
-        "User": var.domain_join_username,
+        "Name": "${var.domain_name}",
+        "OUPath": "${var.oupath}",
+        "User": "${var.domain_join_username}",
         "Restart": "true",
         "Options": "3"
         }
@@ -24,7 +24,7 @@ resource "azurerm_virtual_machine_extension" "domjoin" {
     SETTINGS
     protected_settings = <<PROTECTED_SETTINGS
       {
-      "Password": var.domain_join_password
+      "Password": "${var.domain_join_password}"
       }
     PROTECTED_SETTINGS
 }

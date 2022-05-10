@@ -24,7 +24,7 @@ module "joindomain" {
 
 //  virtual_machine_id = "${element(sqlvm.azurerm_virtual_machine.example2.*.id, count.index )}"
 
-  virtual_machine_id = "${element(module.sqlvm.virtual_machine_id.*, count.index )}"
+  virtual_machine_id = module.sqlvm[count.index].virtual_machine_id
 
 
   domain_name          = var.domain_name
